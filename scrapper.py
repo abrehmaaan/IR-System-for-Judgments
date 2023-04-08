@@ -1,3 +1,4 @@
+import pandas as pd
 import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -29,9 +30,31 @@ WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CLASS_NAME, "
 # Find all divs with the class "info-box"
 info_boxes = driver.find_elements(By.CLASS_NAME, "info-box")
 
+#Cases Information
+titles = []
+casenos = []
+befores = []
+authors = []
+dates = []
+descriptions = []
+laws = []
+headnotes = []
+counter = 0
+
 # Iterate over the info boxes
 for info_box in info_boxes:
     try:
+        #Print the required values
+        title = info_box.find_element(By.ID, "cseTle").text
+        caseno = info_box.find_element(By.ID, "cseNo").text
+        before = info_box.find_element(By.ID, "cseBfr").text
+        author = info_box.find_element(By.ID, "cseAthr").text
+        date = info_box.find_element(By.CSS_SELECTOR, "cite[title='Order Date']").text
+        date = date.split(" ")[-1]
+        description = info_box.find_element(By.ID, "cseDsc").text
+        law = info_box.find_element(By.ID, "cseDscLws").text
+        headnotes = info_box.find_element(By.ID, "cseHn").text
+    
         # Find the i tag with class "GrdB" and click it
         i_tag = info_box.find_element(By.CLASS_NAME,"GrdB")
         i_tag.click()
@@ -45,8 +68,16 @@ for info_box in info_boxes:
         # Download the PDF file to a folder
         if pdf_url:
             response = requests.get(pdf_url)
-            with open("./tax" + pdf_url.split("/")[-1], "wb") as f:
+            with open("./ " + keyword + " " + title + pdf_url.split("/")[-1], "wb") as f:
                 f.write(response.content)
+            titles.append(title)
+            casenos.append(caseno)
+            befores.append(before)
+            authors.append(author)
+            dates.append(date)
+            descriptions.append(description)
+            laws.append(law)
+            headnotes.append(headnotes)
         # Close the new tab and switch back to the main window
         driver.close()
         driver.switch_to.window(driver.window_handles[0])
@@ -54,3 +85,21 @@ for info_box in info_boxes:
         # Close the new tab and switch back to the main window
         driver.close()
         driver.switch_to.window(driver.window_handles[0])
+
+# Combine the lists into a dictionary
+data = {
+    "Title": titles,
+    "Case No.": casenos,
+    "Before": befores,
+    "Author": authors,
+    "Date": dates,
+    "Description": descriptions,
+    "Law": laws,
+    "Headnote": headnotes
+}
+
+# Create a DataFrame from the dictionary
+df = pd.DataFrame(data)
+
+# Write the DataFrame to an Excel file
+df.to_excel(keyword+".xlsx")
