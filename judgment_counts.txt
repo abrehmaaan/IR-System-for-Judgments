@@ -1,0 +1,10 @@
+Category Name	No of Judgments
+administrative	341
+civil	1800
+commercial	362
+constitutional	1182
+criminal	1930
+environmental	56
+family	1965
+tax	1247
+Total judgments	8883
