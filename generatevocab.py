@@ -35,11 +35,9 @@ def get_text_from_pdf(file_path):
 #array of corrupt files
 corruptfiles = []
 
-# Create an empty dictionary to store the vocabulary terms and their index numbers
-vocab = {}
+# Create an empty list to store the vocabulary terms
+vocab = []
 
-# Initialize the index number
-index = 0
 
 # Set up the preprocessing steps
 lemmatizer = WordNetLemmatizer()
@@ -57,23 +55,29 @@ for folder in ['administrative', 'civil', 'commercial', 'constitutional', 'crimi
                 # Perform preprocessing steps like tokenization, removing punctuation marks and less than three-character words,
                 # normalization, stemming, and lemmatization on the extracted text
                 tokens = re.findall(r'\b\w+\b', text.lower())
-                tokens = [t for t in tokens if t not in string.punctuation and len(t) > 2 and t not in stop_words]
+                tokens = [t for t in tokens if t not in string.punctuation and t.isalpha() and len(t) > 3 and t not in stop_words]
                 tokens = [lemmatizer.lemmatize(t) for t in tokens]
                 tokens = [stemmer.stem(t) for t in tokens]
                 
                 # For each token, check if it already exists in the dictionary. If not, add it to the dictionary with a unique index number.
                 for token in tokens:
                     if token not in vocab:
-                        vocab[token] = index
-                        index += 1
+                        vocab.append(token)
             except:
                 corruptfiles.append(filename)
 
+#sort vocabulary
+vocab.sort()
+
+#initialize index
+index = 1
+
 # Once all the pdf files in all the folders have been processed, write the vocabulary terms and their index numbers to a plain text file
 with open('vocabulary.txt', 'w') as f:
-    for term, index in vocab.items():
+    for term in vocab:
         try:
             f.write('{} {}\n'.format(index, term))
+            index = index + 1
         except:
             pass
 
