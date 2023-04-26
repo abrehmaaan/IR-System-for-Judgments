@@ -1,0 +1,11 @@
+Query Number	Query
+1	appel feder
+2	constitut rule
+3	trial servic
+4	author appeal
+5	govern constitut
+6	scmr provid author
+7	rule appel scmr
+8	appel trial author
+9	constitut held scmr
+10	appel scmr govern

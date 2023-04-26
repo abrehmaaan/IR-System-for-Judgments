@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Page</title>
+
+  <!-- Include CSS styling for autocomplete and search page -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+
+    #search-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #search-bar {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.075) inset;
+      font-size: 16px;
+      margin: 10px;
+      padding: 6px 10px;
+      width: 400px;
+    }
+
+    #search-btn {
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1 style="text-align: center;">IR System for Lawyers</h1>
+  </div>
+  <form id="search-form" action="/search" method="get">
+    <div>
+      <input type="text" id="search-bar" name="q" placeholder="Search...">
+      <button type="submit" id="search-btn">Search</button>
+    </div>
+  </form>
+</body>
+</html>
