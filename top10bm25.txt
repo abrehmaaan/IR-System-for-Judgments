@@ -1,0 +1,130 @@
+Query Term 1
+Weighting Scheme: BM25
+H777	777_tax MCB Islamic Bank Ltd VS FOP, etcW.P_No.680-21_637611058189620391.pdf	0.1458960094333344
+H327	327_tax Chamber of Commerce & industries VS FOP & othersW.P_No.4125-19_637679842.pdf	0.1371914780053558
+H610	610_tax Gul Ahmed Energy Limited and others VS FOP etc (Adv. Muhammad Anas Makhd.pdf	0.12761448778405704
+H535	535_tax Attock Gen Limited (Usman Akram Sahi) VS FOP etcW.P_No.805-18_6375946282.pdf	0.12437297471939918
+H612	612_tax Attock Gen Limited (Usman Akram Sahi) VS FOP etcW.P_No.805-18_6376309158.pdf	0.12437297471939918
+H487	487_tax Chase Trading & Technology VS FOP & othersW.P.No.3560_of_2021_chasing__6.pdf	0.1241664266103722
+H744	744_tax Sardar Ubaid Saeed VS FOP, etcW.P._No.3648-2020_637888922770114509.pdf	0.12318294064570526
+H630	630_tax Muhammad Younas VS FBR etcW.P_No.2005-21_637588599501898580.pdf	0.1227632656774682
+H259	259_tax Sardar Ubaid Saeed VS FOP, etc3648_637509789275754259.pdf	0.12243804439779254
+H525	525_tax Noor ul Amin Qureshi VS FOP, FBR, etcW.P.No.94_of_2021_Noor_Ul_Amin_Qure.pdf	0.12201814481330578
+
+Query Term 2
+Weighting Scheme: BM25
+E1428	1428_criminal Nabi Ahmed Cheema & others VS Chief Commissioner & others (Adv. Dr.pdf	0.08081102092674229
+D57	57_constitutional Uzair Ahmed VS DHA, etc139762_637903708406696920.pdf	0.07676357866124382
+B1405	1405_civil Dr. Muhammad Yousaf Hayat Khan VS PARCICA-429-2018___________________.pdf	0.07570430242938664
+D849	849_constitutional Rashid Ullah Khan VS Aviation Division etcICA-142-W-2014_____.pdf	0.07013630949423562
+D348	348_constitutional Aitbar Hussain Abbasi VS DG FIA etc117488_637512423356859079..pdf	0.0700253137182913
+D346	346_constitutional Rizwan Pervez VS CDA & 2 others55988_637514938024519090.pdf	0.06842020462190185
+F27	27_environmental Rizwan Pervez VS CDA & 2 others55988_637514938024519090.pdf	0.06842020462190185
+C29	29_commercial SNGPL VS OGRA etc.Diary_No.12406-2022_637951412129385325.pdf	0.06756038855606047
+C30	30_commercial SNGPL VS OGRA etc.Diary_No.12407-2022_637951412293237650.pdf	0.06756038855606047
+B199	199_civil Muhammad Amin Minhas VS Learned Civil Judge, etcWrit_Petitiion_No.1531.pdf	0.0667477062747046
+
+Query Term 3
+Weighting Scheme: BM25
+G1319	1319_family Muhammad Zubair Paracha VS Learned Family Judge-W, etcW.P_No._394-20.pdf	0.15044955981904906
+G77	77_family Muhammad Kamran VS ADJ East Islamabad19._WP_No.401-_2022-f_63782962820.pdf	0.13710380810297876
+B169	169_civil Dr. Syed Ali Azhar Kazmi VS Learned Senior Civil Judge-I(West) Islamab.pdf	0.13358621116725014
+G196	196_family Muhammad Jahanzaib Abbasi VS Naima Akhtar Abbasi & othersshort_order_.pdf	0.11823485786636259
+G479	479_family Majid Sajad VS Ayesha Majid, etc16.Wp_No.156-_2022-D_6378260374220768.pdf	0.1166168879188216
+G1214	1214_family Rafaqat Khan VS Jamila Begum etcWrit_Petition_No.1945_of_2021_637619.pdf	0.11612237833118542
+G559	559_family Muhammad Kamran VS ADJ East Islamabad3_WP_401-2022_638125057228864895.pdf	0.1104470709127934
+G101	101_family Mst. Rabia VS Addl. District Judge-IV (East), Islamabad etc.Writ_Peti.pdf	0.10921404746209756
+G1449	1449_family Khurram Nawaz VS Learned ADJ-West, etcWrit_Petition_No.322_of_2021,_.pdf	0.10877266186233482
+H372	372_tax MOL Pakistan Oil Gas Company VS Islamabad Capital Territory Administrati.pdf	0.1052818689759677
+
+Query Term 4
+Weighting Scheme: BM25
+H781	781_tax FGEHA VS FOP, FBR, etcW.P_No.501-21_637575269711683782.pdf	0.13050098038665736
+H739	739_tax Muhammad Haider VS CDA & othersW.P._No.__447_of_2021_637513993395249131..pdf	0.11093137209331475
+B31	31_civil Col.(Retd) Ejaz Hussain etc VS Multi National Venture Development Pvt L.pdf	0.10785036973328019
+H516	516_tax PHA VS CIR & othersW.P.No.2910_of_2021_PHA__637647981509266296.pdf	0.10774203363307078
+E1263	1263_criminal Raja Saeed Nawab etc VS Muhammad Salim Chairman PEMRA etc108481_63.pdf	0.10289975547730723
+E70	70_criminal The State etc VS Zia Ur Rehman etc111264_637913223015589997.pdf	0.10236257522157134
+H211	211_tax Toyata Islamabad Moters VS FOP, FBR ,etcW.P_No.-727-21_63749610324901700.pdf	0.10050264809410944
+E232	232_criminal Ayaz Ahmed VS The State etcR.A._No.__31_of_2020_637545186263106755..pdf	0.09496428688662456
+D172	172_constitutional Abdul Waheed VS Registrar Cooperative etc131764_6378069359416.pdf	0.09312231531650517
+B967	967_civil Dr. Muhammad Raheem Awan VS Afzal Ahmed etc111958-_637479427599831009..pdf	0.08581168472510485
+
+Query Term 5
+Weighting Scheme: BM25
+H1070	1070_tax Aftab Ahmed VS FOP through Chairman FBR etcwp_2831_of_19_63775691337980.pdf	0.08953301181570086
+B394	394_civil Dr. Muhammad Ajmal VS GOP etcW.P_No.3955-15_637493227342772492.pdf	0.08947424486222104
+B1227	1227_civil Shahid Akhter VS GOP etc106350_637633344589644563.pdf	0.08202308932541119
+D7	7_constitutional Dr. Nazar Ullah Raja VS FOP etc110632_638109454346261604.pdf	0.0787867646246483
+B341	341_civil Dr. Muhammad Ajmal VS GOP etcw.p._no._3955_of_2015_637576255725923624..pdf	0.07606968719072456
+B1405	1405_civil Dr. Muhammad Yousaf Hayat Khan VS PARCICA-429-2018___________________.pdf	0.07432186932175285
+D590	590_constitutional Tazeem Akhtar VS FOP & others112311-_637467398122144851.pdf	0.07341387091630142
+A174	174_administrative Siraj Ahmad VS Vice Chancellor IBC Islamabad etc111723_637512.pdf	0.07318581257311726
+D605	605_constitutional Siraj Ahmad VS Vice Chancellor IBC Islamabad etc111723_637512.pdf	0.07318581257311726
+E1305	1305_criminal Siraj Ahmad VS Vice Chancellor IBC Islamabad etc111723_63751240827.pdf	0.07318581257311726
+
+Query Term 6
+Weighting Scheme: BM25
+H739	739_tax Muhammad Haider VS CDA & othersW.P._No.__447_of_2021_637513993395249131..pdf	0.09057508603181287
+H781	781_tax FGEHA VS FOP, FBR, etcW.P_No.501-21_637575269711683782.pdf	0.08969304624438434
+H388	388_tax Zahid Khan VS FOP, etcW.P_No.4595-21_637759512389952446.pdf	0.08015225356045723
+E223	223_criminal Abdul Qadeer VS The State, etcObjection_Case_No.7893-2021_637575537.pdf	0.08002983663183852
+E1147	1147_criminal Gul Omraiz Khan etc VS Dr. Muhammad Ali Noor etc110340_63751240111.pdf	0.0718835614127059
+H975	975_tax Muhammad Khalid Randhawa & others VS CDA & others33736_63751492880880290.pdf	0.06966619418547551
+H648	648_tax Usman Arshsd VS FOP, etcWrit_Petition_No._728-2021_637515824859257206.pd.pdf	0.069144347035829
+D172	172_constitutional Abdul Waheed VS Registrar Cooperative etc131764_6378069359416.pdf	0.06798416534230287
+C75	75_commercial Mehboob ur Rehman VS NHA, etcW.P._No._3625_of_2014_637763855781927.pdf	0.06730780531989376
+H156	156_tax Adelte J.V Others VS Pakistan Civil Aviation & othersWrit_Petition_No._3.pdf	0.06696498732084642
+
+Query Term 7
+Weighting Scheme: BM25
+B439	439_civil Shaukat Mehmood VS Public At Large etcDiary_No._204-2021_6376141902462.pdf	0.10396491392871604
+C9	9_commercial Orient Power VS CIRObjection_Case_No.11003_of_2021_6381328359364122.pdf	0.10143379425608906
+B1215	1215_civil Dr. Muhammad rahim Awan VS Afzal Ahmed etc103259_637610943205718433.p.pdf	0.09160324196001013
+B76	76_civil Mian Muhammad Iqbal VS Habib Bank Limited271_of_15_637462205447851271.p.pdf	0.08733740947840588
+B314	314_civil Muhammad Waseem Ashfaq etc VS Zafar Munir etcDiary_No.6771-2021_637551.pdf	0.08694179513457626
+B110	110_civil Nazir Ahmad Khan VS Muhammad Bashir & OthersI.C.A._No.438_of_2014_6378.pdf	0.08401234618561562
+D849	849_constitutional Rashid Ullah Khan VS Aviation Division etcICA-142-W-2014_____.pdf	0.08398248461839841
+E395	395_criminal Abdul Ghaffar VS SSP, ICT Islamabad.Objection_Case_No.1490_OF_2021_.pdf	0.0835559982123201
+D331	331_constitutional Amir Butt VS MD, PTV Corporation etcICA-405-2019_____________.pdf	0.07922176049471236
+E70	70_criminal The State etc VS Zia Ur Rehman etc111264_637913223015589997.pdf	0.07817859686008043
+
+Query Term 8
+Weighting Scheme: BM25
+H725	725_tax General Manager, Pakistan Water and Power Development Authority, Islamab.pdf	0.12756656996844246
+H757	757_tax General Manager, Pakistan Water and Power Development Authority, Islamab.pdf	0.12756656996844246
+G26	26_family Azam VS ADJ etcW.P._No.2402-2021_637611970073310030.pdf	0.1201245289392416
+B967	967_civil Dr. Muhammad Raheem Awan VS Afzal Ahmed etc111958-_637479427599831009..pdf	0.11677749536684151
+G130	130_family Asjad Mehmood VS Learned ADJ Islamabad etc.W.P._No.4059-2022_63804189.pdf	0.10657220799889236
+E406	406_criminal ANF VS Muhammad Waseem, etc (Adv. Arif Riaz Butt)Crl._Appeal_No._08.pdf	0.10568474626175825
+B439	439_civil Shaukat Mehmood VS Public At Large etcDiary_No._204-2021_6376141902462.pdf	0.10498963452819984
+G677	677_family Usman Ali VS Learned ADJ-WestW.P_No.1806_of_2021_637575408720719938.p.pdf	0.10122224945733274
+G38	38_family Mst. Nusrat Bibi VS The Learned ADJ etc.5_WP_4664-2022_Family_matter_6.pdf	0.09264122123511517
+E395	395_criminal Abdul Ghaffar VS SSP, ICT Islamabad.Objection_Case_No.1490_OF_2021_.pdf	0.09152564799780405
+
+Query Term 9
+Weighting Scheme: BM25
+H208	208_tax Syed Saif ALi Shah VS ECP, etc139176_638022132092736288.pdf	0.08065440532489417
+A174	174_administrative Siraj Ahmad VS Vice Chancellor IBC Islamabad etc111723_637512.pdf	0.07590739212026427
+D605	605_constitutional Siraj Ahmad VS Vice Chancellor IBC Islamabad etc111723_637512.pdf	0.07590739212026427
+E1305	1305_criminal Siraj Ahmad VS Vice Chancellor IBC Islamabad etc111723_63751240827.pdf	0.07590739212026427
+B389	389_civil Irfan ul Haq VS Mian Rashid Arshad, etc4845_637540795622979754.pdf	0.07288572409566078
+D849	849_constitutional Rashid Ullah Khan VS Aviation Division etcICA-142-W-2014_____.pdf	0.07094504956393582
+D149	149_constitutional Ayesha Noor VS FOP Etcw.p_No._3094_of_2021_dismissed_in_limin.pdf	0.07013054558382614
+G891	891_family Malik Muhammad Rafiq etc VS Public At Large etcW.P._No.3506_of_2022_6.pdf	0.0696536482779252
+D76	76_constitutional Faraz ALi Bhatti VS Learned Civil Judge, etc140807_63784067071.pdf	0.060881338844464346
+G685	685_family Faraz ALi Bhatti VS Learned Civil Judge, etc140807_637840670710382224.pdf	0.060881338844464346
+
+Query Term 10
+Weighting Scheme: BM25
+B417	417_civil Leena Ali Khan VS GOP etcDiary_No._1804-2021_637484688005838692.pdf	0.1110218407234406
+B76	76_civil Mian Muhammad Iqbal VS Habib Bank Limited271_of_15_637462205447851271.p.pdf	0.08733740947840588
+B110	110_civil Nazir Ahmad Khan VS Muhammad Bashir & OthersI.C.A._No.438_of_2014_6378.pdf	0.08401234618561562
+D331	331_constitutional Amir Butt VS MD, PTV Corporation etcICA-405-2019_____________.pdf	0.0814516023119426
+D849	849_constitutional Rashid Ullah Khan VS Aviation Division etcICA-142-W-2014_____.pdf	0.08016203131308439
+H975	975_tax Muhammad Khalid Randhawa & others VS CDA & others33736_63751492880880290.pdf	0.07898297871466298
+E70	70_criminal The State etc VS Zia Ur Rehman etc111264_637913223015589997.pdf	0.07817859686008043
+B43	43_civil Nazir Ahmad Khan VS Muhammad Bashir & OthersI.C.A._No.438_of_2014_63771.pdf	0.07798483886228062
+H473	473_tax Malik Aman VS Customs Appellate Tribunal & othersW.P._No.3813-2020_63771.pdf	0.0775814545013622
+H450	450_tax Malik Aman VS Customs Appellate Tribunal & othersW.P._No.3813-2020_63770.pdf	0.0769151131241173
+
