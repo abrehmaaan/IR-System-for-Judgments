@@ -8,7 +8,82 @@ from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
 import json
 
+# Load the raw term freqs from file
+rawtermfrequencies = {}
+with open(os.path.dirname(__file__) + "/../rawtermfreq.txt") as f:
+    for line in f:
+        parts = line.strip().split()
+        term_id = int(parts[0])
+        rawtermfrequencies[term_id] = {}
+        for pair in parts[1:]:
+            doc_id, rawtermfrequencies_val = pair.split(":")
+            rawtermfrequencies[term_id][doc_id] = int(rawtermfrequencies_val)
+
+# Load the normal tf-idf weights from file
+normalized_tfidf_dict = {}
+with open(os.path.dirname(__file__) + "/../normaltfidf.txt") as f:
+    for line in f:
+        parts = line.strip().split()
+        term_id = int(parts[0])
+        normalized_tfidf_dict[term_id] = {}
+        for pair in parts[1:]:
+            doc_id, normalized_tfidf_dict_val = pair.split(":")
+            normalized_tfidf_dict[term_id][doc_id] = float(normalized_tfidf_dict_val)
+# Read the vocabulary file
+vocab = {}
+with open(os.path.dirname(__file__) + '/../vocabulary.txt', 'r') as f:
+    for line in f:
+        index, term = line.strip().split()
+        vocab[term] = int(index)
+
+# Set up the preprocessing steps
+lemmatizer = WordNetLemmatizer()
+stemmer = PorterStemmer()
+stop_words = set(stopwords.words('english'))
+
+doc_filenames = {}
+with open(os.path.dirname(__file__) + '/../newfileinfo.txt', 'r') as f:
+    for line in f:
+        ind, fn = line.strip().split('\t')
+        doc_filenames[ind] = fn
+
+rtfreq = {}
+for doc_id in doc_filenames.keys():
+    rtfreq[doc_id] = {}
+
+for term_index, doc_freqs in rawtermfrequencies.items():
+    for doc_id, freq in doc_freqs.items():
+        if doc_id in doc_filenames.keys():
+            rtfreq[doc_id][term_index] = rawtermfrequencies[term_index][doc_id]
+
+doc_abstracts = {}
+with open(os.path.dirname(__file__) + '/../newextracteddata.txt', 'r') as f:
+    for line in f:
+        ind, fn = line.strip().split('\t')
+        doc_abstracts[ind] = fn
+
+# Read the idf from file
+idf = {}
+with open(os.path.dirname(__file__) + '/../idf.txt', 'r') as f:
+    for line in f:
+        index, value = line.strip().split()
+        idf[int(index)] = float(value)
+
+folder_name = {
+        'A':'administrative',
+        'B':'civil',
+        'C':'commercial',
+        'D':'constitutional',
+        'E':'criminal',
+        'F':'environmental',
+        'G':'family',
+        'H':'tax'
+    }
+
 app = Flask(__name__)
+
+# Set the number of results per page
+RESULTS_PER_PAGE = 10
 
 @app.route("/")
 def index():
@@ -17,27 +92,6 @@ def index():
 @app.route('/search')
 def search():
     query_text = request.args.get('q')
-    # Load the normal tf-idf weights from file
-    normalized_tfidf_dict = {}
-    with open(os.path.dirname(__file__) + "/../normaltfidf.txt") as f:
-        for line in f:
-            parts = line.strip().split()
-            term_id = int(parts[0])
-            normalized_tfidf_dict[term_id] = {}
-            for pair in parts[1:]:
-                doc_id, normalized_tfidf_dict_val = pair.split(":")
-                normalized_tfidf_dict[term_id][doc_id] = float(normalized_tfidf_dict_val)
-    # Read the vocabulary file
-    vocab = {}
-    with open(os.path.dirname(__file__) + '/../vocabulary.txt', 'r') as f:
-        for line in f:
-            index, term = line.strip().split()
-            vocab[term] = int(index)
-
-    # Set up the preprocessing steps
-    lemmatizer = WordNetLemmatizer()
-    stemmer = PorterStemmer()
-    stop_words = set(stopwords.words('english'))
 
     # Perform preprocessing steps like tokenization, removing punctuation marks and less than three-character words,
     # normalization, stemming, and lemmatization on the extracted text
@@ -80,13 +134,6 @@ def search():
             logtermfreq[index] = term_dict
 
 
-    # Read the idf from file
-    idf = {}
-    with open(os.path.dirname(__file__) + '/../idf.txt', 'r') as f:
-        for line in f:
-            index, value = line.strip().split()
-            idf[int(index)] = float(value)
-
     # initialize a dictionary to store TF-IDF values for each term in each query
     tfidf_queries = {}
 
@@ -126,18 +173,6 @@ def search():
                 normalized_tfidf_queries[query_id] = {}
             normalized_tfidf_queries[query_id][term_id] = normalized_tfidf_queries_dict[term_id][query_id]
 
-    doc_filenames = {}
-    with open(os.path.dirname(__file__) + '/../newfileinfo.txt', 'r') as f:
-        for line in f:
-            ind, fn = line.strip().split('\t')
-            doc_filenames[ind] = fn
-
-    doc_abstracts = {}
-    with open(os.path.dirname(__file__) + '/../newextracteddata.txt', 'r') as f:
-        for line in f:
-            ind, fn = line.strip().split('\t')
-            doc_abstracts[ind] = fn
-
     similarities = {}
 
     for query_id in query_ids:
@@ -155,10 +190,51 @@ def search():
 
     doc_details = []
     for doc_id, sim_score in top_docs.items():
-        doc_details.append({'id': doc_id, 'score': sim_score, 'name': doc_filenames[doc_id], 'abstract': doc_abstracts[doc_id]})
+        # Get the folder name based on the initial of doc_id
+        folder_initial = doc_id[0]
+        f_name = folder_name[folder_initial]
+
+        # Build the file path
+        parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+        file_path = os.path.join(parent_dir, f_name, doc_filenames[doc_id])
+
+        # Generate the HTML link
+        pdf_link = f'<a href="{file_path}">{doc_filenames[doc_id]}</a>'
+        doc_details.append({'id': doc_id, 'link': pdf_link, 'abstract': doc_abstracts[doc_id]})
     
-    # Pass data to template and render it
-    return render_template('search.html', results=doc_details)
+    # Calculate the number of pages
+    num_results = len(doc_details)
+    num_pages = math.ceil(num_results / RESULTS_PER_PAGE)
+
+    # Get the current page number from the request
+    page = request.args.get('page')
+    if page:
+        page = int(page)
+    else:
+        page = 1
+
+    # Get the starting and ending indices of the results for the current page
+    start_index = (page - 1) * RESULTS_PER_PAGE
+    end_index = start_index + RESULTS_PER_PAGE
+
+    # Pass the results for the current page to the template
+    results = doc_details[start_index:end_index]
+
+    wordcloud = {}
+    for term in vocab.keys():
+        wordcloud[term] = 0
+    
+    for res in results:
+        for term_index, freq in rtfreq[res['id']].items():
+            wordcloud[list(vocab.keys())[list(vocab.values()).index(term_index)]] += freq
+    
+    wordcloud = {k: v for k, v in wordcloud.items() if v != 0}
+
+    wordcloud = dict(sorted(wordcloud.items(), key=lambda x: -x[1]))
+    
+    
+    # Render the template with the search results and pagination information
+    return render_template('search.html', query=query_text, results=results, num_pages=num_pages, current_page=page)
 
 
 if __name__ == "__main__":
