@@ -200,7 +200,7 @@ def search():
         file_path = os.path.join(parent_dir, f_name, doc_filenames[doc_id])
 
         # Generate the HTML link
-        pdf_link = f'<a href="{file_path}">{doc_filenames[doc_id]}</a>'
+        pdf_link = f'<a href="file://{file_path}">{doc_filenames[doc_id]}</a>'
         doc_details.append({'id': doc_id, 'link': pdf_link, 'abstract': doc_abstracts[doc_id]})
     
     # Calculate the number of pages
