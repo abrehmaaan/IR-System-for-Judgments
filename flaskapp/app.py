@@ -7,6 +7,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
 import json
+import random
 
 # Load the raw term freqs from file
 rawtermfrequencies = {}
@@ -226,15 +227,24 @@ def search():
     
     for res in results:
         for term_index, freq in rtfreq[res['id']].items():
-            wordcloud[list(vocab.keys())[list(vocab.values()).index(term_index)]] += freq
+            # if freq >= 2:
+            wordcloud[list(vocab.keys())[list(vocab.values()).index(term_index)]] += freq * 10
     
     wordcloud = {k: v for k, v in wordcloud.items() if v != 0}
 
-    wordcloud = dict(sorted(wordcloud.items(), key=lambda x: -x[1]))
-    
+    # wordcloud = dict(sorted(wordcloud.items(), key=lambda x: -x[1]))
+    # create an empty dictionary to store the colors
+    colors = {}
+
+    # generate a random color for each term in the wordcloud dictionary
+    for term in wordcloud:
+        # generate a random color as a tuple of three integers between 0 and 255
+        color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        # store the color in the colors dictionary with the term as the key
+        colors[term] = color
     
     # Render the template with the search results and pagination information
-    return render_template('search.html', query=query_text, results=results, num_pages=num_pages, current_page=page)
+    return render_template('search.html', query=query_text, results=results, num_pages=num_pages, current_page=page, word_dict=wordcloud, colors=colors)
 
 
 if __name__ == "__main__":
