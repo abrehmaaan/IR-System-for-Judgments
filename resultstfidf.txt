@@ -1,0 +1,12 @@
+Query Terms	Weighting	P	R	F	AP
+QueryTerm-1	TFIDF	0.900	0.900	0.900	1.000
+QueryTerm-2	TFIDF	0.700	0.700	0.700	0.668
+QueryTerm-3	TFIDF	0.800	0.800	0.800	0.766
+QueryTerm-4	TFIDF	0.400	0.400	0.400	0.653
+QueryTerm-5	TFIDF	0.400	0.400	0.400	0.510
+QueryTerm-6	TFIDF	0.600	0.600	0.600	0.813
+QueryTerm-7	TFIDF	0.600	0.600	0.600	0.744
+QueryTerm-8	TFIDF	0.300	0.300	0.300	0.317
+QueryTerm-9	TFIDF	0.300	0.300	0.300	0.476
+QueryTerm-10	TFIDF	0.700	0.700	0.700	0.711
+Mean Average Precision for 10 queries = 0.666
